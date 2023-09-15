@@ -10,17 +10,29 @@ namespace C__UNIVESITY_
     {
         static void Main(string[] args)
         {
-            /*
-            Menu1 menu = new Menu1();
-            Console.WriteLine("1-задание, 2 - задание, 3 - задание");
-            string meny_symb=Console.ReadLine();
-            switch (meny_symb) {
-                case "1": menu.MenuForOneEx(); break;
-                case "2": menu.MenuForTwoEx(); break;
-                case "3": menu.MenuForThreeEx(); break;
-                default: Console.WriteLine("1-задание"); menu.MenuForOneEx(); break;
-            }*/
-            Menu2 menu = new Menu2();
+            Console.WriteLine("Выберите лабораторную работу:");
+            Console.WriteLine("1 - 1-ая лабораторная, 2 - 2-ая лабораторная");
+            string meny_symb = Console.ReadLine();
+            if (meny_symb == "1")
+            {
+                Menu1 menu = new Menu1();
+                Console.WriteLine("Выберите задание:");
+                Console.WriteLine("1-задание, 2 - задание, 3 - задание");
+                meny_symb = Console.ReadLine();
+                switch (meny_symb)
+                {
+                    case "1": menu.MenuForOneEx(); break;
+                    case "2": menu.MenuForTwoEx(); break;
+                    case "3": menu.MenuForThreeEx(); break;
+                    default: Console.WriteLine("1-задание"); menu.MenuForOneEx(); break;
+                }
+            }
+            else if (meny_symb == "2")
+            {
+                Menu2 menu2 = new Menu2();
+            }
+            else Console.WriteLine("Последющие лабы в разработке)");
+            
         }
     }
 }

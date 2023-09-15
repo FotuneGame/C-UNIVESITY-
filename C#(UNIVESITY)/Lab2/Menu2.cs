@@ -145,21 +145,25 @@ namespace Menu2Space
         }
         private void sort_by_station(int id_window)
         {
-            // не самое лучшее решение как по мне, но быстро для написания) 
-            var new_trains = trains.OrderBy(train => train.station.Length).ThenBy(train => train.station).ToList();
-            if (new_trains.Count != 0)
+            // возвращает отсортированную последовательность (не список!)
+            var new_trains = trains.OrderBy(train => train.station.Length).ThenBy(train => train.station);
+            Console.WriteLine("|_Номер_|__Станция направления__|__Время отправления__|____Время в пути_____|__Билеты__|");
+            bool flag_none = true;
+            foreach (Train train in new_trains)
             {
-                Console.WriteLine("|_Номер_|__Станция направления__|__Время отправления__|____Время в пути_____|__Билеты__|");
-                foreach (Train train in new_trains)
-                {
-                    showTrain(train);
-                }
+                flag_none = false;
+                showTrain(train);
+            }
+            
+            if (flag_none)
+            {
+                Console.Clear();
+                Console.WriteLine("Поездов нет");
                 Console.ReadLine();
                 Console.Clear();
             }
             else
             {
-                Console.WriteLine("Поездов нет");
                 Console.ReadLine();
                 Console.Clear();
             }
