@@ -56,6 +56,11 @@
     <Compile Include="Lab1\MenuCUI\Window.cs" />
     <Compile Include="Lab2\FileWorker.cs" />
     <Compile Include="Lab2\Menu2.cs" />
+    <Compile Include="Lab3\FileWorkerWithCPP.cs" />
+    <Compile Include="Lab3\FirstEx.cs" />
+    <Compile Include="Lab3\Menu3.cs" />
+    <Compile Include="Lab4\ArrayWorkerCPP.cs" />
+    <Compile Include="Lab4\Menu4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

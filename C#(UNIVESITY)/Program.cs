@@ -1,8 +1,10 @@
 ﻿using System;
 
-
 using Menu2Space;
 using Menu1Space;
+using GarbageCollectorInCSharp;
+using Menu3Space;
+using Menu4Space;
 
 namespace C__UNIVESITY_
 {
@@ -11,7 +13,7 @@ namespace C__UNIVESITY_
         static void Main(string[] args)
         {
             Console.WriteLine("Выберите лабораторную работу:");
-            Console.WriteLine("1 - 1-ая лабораторная, 2 - 2-ая лабораторная");
+            Console.WriteLine("1 - 1-ая лабораторная, 2 - 2-ая лабораторная, 3 - 3-ая лабораторная, 4 - 4-ая лабораторная");
             string meny_symb = Console.ReadLine();
             if (meny_symb == "1")
             {
@@ -31,7 +33,31 @@ namespace C__UNIVESITY_
             {
                 Menu2 menu2 = new Menu2();
             }
-            else Console.WriteLine("Последющие лабы в разработке)");
+            else if(meny_symb == "3")
+            {
+                Console.WriteLine("Выберите задание:");
+                Console.WriteLine("1-задание, 2 - задание");
+                meny_symb = Console.ReadLine();
+                GCProgram myGCCol;
+                switch (meny_symb)
+                {
+                    case "1":  myGCCol = new GCProgram(); myGCCol.Start(); break;
+                    case "2": Menu3 menu3 = new Menu3(); break;
+                    default: Console.WriteLine("1-задание"); myGCCol = new GCProgram(); myGCCol.Start(); break;
+                }
+            }else if(meny_symb == "4")
+            {
+                Console.WriteLine("Выберите задание:");
+                Console.WriteLine("1-задание, 2 - задание");
+                meny_symb = Console.ReadLine();
+                switch (meny_symb)
+                {
+                    case "1":  Menu4 menu4 = new Menu4(); break;
+                    case "2":  Console.WriteLine("Сделано в отдельном пректе windows forms..."); break;
+                    default: Console.WriteLine("1-задание");break;
+                }
+            }
+            else Console.WriteLine("Далее только курсовая... она близко...");
             
         }
     }
